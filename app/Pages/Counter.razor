@@ -26,6 +26,6 @@
     private async Task GetMessage()
     {
         var temp = await Http.GetStringAsync("/api/JustHello?name=cloudies");
-        var name = temp;
+        message = temp;
     }
 }
