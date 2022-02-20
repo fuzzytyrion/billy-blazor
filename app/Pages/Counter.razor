@@ -13,10 +13,16 @@
 
 <button class="btn btn-primary" @onclick="GetMessage">Salutation</button>
 
+<p>Another Message: @anotherMessage</p>
+
+<button class="btn btn-primary" @onclick="GetAnotherMessage">Au revoir</button>
+
 @code {
     private int currentCount = 0;
 
     private string message = "Hi";
+
+    private string anotherMessage = "Ciao";
 
     private void IncrementCount()
     {
@@ -27,5 +33,11 @@
     {
         var temp = await Http.GetStringAsync("/api/JustHello?name=cloudies");
         message = temp;
+    }
+
+    private async Task GetAnotherMessage()
+    {
+        var temp = await Http.GetStringAsync("/api/JustBye?name=azuries");
+        anotherMessage = temp;
     }
 }
