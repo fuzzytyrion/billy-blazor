@@ -1,0 +1,19 @@
+@page "/turnip"
+
+<PageTitle>Turnip</PageTitle>
+
+<h1>Turnip</h1>
+
+<button class="btn btn-primary" @onclick="GetTurnip">Get turnip</button>
+
+<p>Turnip class: @turnipClass</p>
+
+@code
+{
+    private string turnipClass = "glossy";
+
+    private void GetTurnip()
+    {
+        turnipClass = "solid";
+    }
+}
